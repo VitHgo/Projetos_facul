@@ -37,8 +37,6 @@ void* produtor(void* arg) {
         pthread_cond_signal(&cond_cons);
         pthread_mutex_unlock(&lock);
 
-        sleep(rand() % 2);
-
     }
     
     return NULL;
@@ -63,8 +61,6 @@ void* consumidor(void* arg) {
 
         pthread_cond_signal(&cond_prod);
         pthread_mutex_unlock(&lock);
-
-        sleep(rand() % 2);
 
     }
    
